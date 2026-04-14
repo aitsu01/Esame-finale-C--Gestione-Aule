@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace Esame_Finale_C__gestione_prenotazione_aule.models
+namespace PrenotazioneAuleStudio.Models
 {
-    internal class ArchivioPrenotazioni
+    public class ArchivioPrenotazioni
     {
+        public int ProssimoId { get; set; } = 1;
+        public List<Prenotazione> Prenotazioni { get; set; } = new();
     }
 }

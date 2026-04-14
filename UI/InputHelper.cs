@@ -1,12 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 
-namespace Esame_Finale_C__gestione_prenotazione_aule.UI
+namespace PrenotazioneAuleStudio.UI
 {
-    internal class InputHelper
+    public static class InputHelper
     {
+        public static int LeggiIntero(string messaggio)
+        {
+            int valore;
+            do
+            {
+                Console.Write(messaggio);
+            }
+            while (!int.TryParse(Console.ReadLine(), out valore));
+
+            return valore;
+        }
+
+        public static string LeggiStringa(string messaggio)
+        {
+            string? valore;
+            do
+            {
+                Console.Write(messaggio);
+                valore = Console.ReadLine();
+            }
+            while (string.IsNullOrWhiteSpace(valore));
+
+            return valore;
+        }
+
+        public static DateTime LeggiData(string messaggio)
+        {
+            DateTime data;
+            do
+            {
+                Console.Write(messaggio);
+            }
+            while (!DateTime.TryParseExact(
+                Console.ReadLine(),
+                "dd/MM/yyyy",
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
+                out data));
+
+            return data;
+        }
     }
 }
