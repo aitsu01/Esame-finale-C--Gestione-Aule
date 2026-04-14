@@ -1,0 +1,207 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|c:\\users\\giannipc\\onedrive\\desktop\\esame-finale-c#\\esame-finale-c#-gestione-prenotazione-aule\\ui\\menustudente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|solutionrelative:ui\\menustudente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|c:\\users\\giannipc\\onedrive\\desktop\\esame-finale-c#\\esame-finale-c#-gestione-prenotazione-aule\\ui\\inputhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|solutionrelative:ui\\inputhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|c:\\users\\giannipc\\onedrive\\desktop\\esame-finale-c#\\esame-finale-c#-gestione-prenotazione-aule\\esame-finale-c#-gestione-prenotazione-aule.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|solutionrelative:esame-finale-c#-gestione-prenotazione-aule.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|c:\\users\\giannipc\\onedrive\\desktop\\esame-finale-c#\\esame-finale-c#-gestione-prenotazione-aule\\services\\prenotazioneservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|solutionrelative:services\\prenotazioneservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|c:\\users\\giannipc\\onedrive\\desktop\\esame-finale-c#\\esame-finale-c#-gestione-prenotazione-aule\\data\\jsondatastore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|solutionrelative:data\\jsondatastore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|c:\\users\\giannipc\\onedrive\\desktop\\esame-finale-c#\\esame-finale-c#-gestione-prenotazione-aule\\models\\archivioprenotazioni.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|solutionrelative:models\\archivioprenotazioni.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|c:\\users\\giannipc\\onedrive\\desktop\\esame-finale-c#\\esame-finale-c#-gestione-prenotazione-aule\\models\\prenotazione.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|solutionrelative:models\\prenotazione.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|c:\\users\\giannipc\\onedrive\\desktop\\esame-finale-c#\\esame-finale-c#-gestione-prenotazione-aule\\models\\aulastudio..cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|solutionrelative:models\\aulastudio..cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|c:\\users\\giannipc\\onedrive\\desktop\\esame-finale-c#\\esame-finale-c#-gestione-prenotazione-aule\\models\\studente..cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|solutionrelative:models\\studente..cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|c:\\users\\giannipc\\onedrive\\desktop\\esame-finale-c#\\esame-finale-c#-gestione-prenotazione-aule\\models\\ruolo..cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|solutionrelative:models\\ruolo..cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|c:\\users\\giannipc\\onedrive\\desktop\\esame-finale-c#\\esame-finale-c#-gestione-prenotazione-aule\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6879A3B-D764-4810-99AE-D670867AB361}|Esame-Finale-C#-gestione-prenotazione-aule.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MenuStudente.cs",
+              "DocumentMoniker": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\UI\\MenuStudente.cs",
+              "RelativeDocumentMoniker": "UI\\MenuStudente.cs",
+              "ToolTip": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\UI\\MenuStudente.cs",
+              "RelativeToolTip": "UI\\MenuStudente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T07:59:29.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InputHelper.cs",
+              "DocumentMoniker": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\UI\\InputHelper.cs",
+              "RelativeDocumentMoniker": "UI\\InputHelper.cs",
+              "ToolTip": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\UI\\InputHelper.cs",
+              "RelativeToolTip": "UI\\InputHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T07:59:06.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PrenotazioneService.cs",
+              "DocumentMoniker": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\Services\\PrenotazioneService.cs",
+              "RelativeDocumentMoniker": "Services\\PrenotazioneService.cs",
+              "ToolTip": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\Services\\PrenotazioneService.cs",
+              "RelativeToolTip": "Services\\PrenotazioneService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T07:58:28.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "JsonDataStore.cs",
+              "DocumentMoniker": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\Data\\JsonDataStore.cs",
+              "RelativeDocumentMoniker": "Data\\JsonDataStore.cs",
+              "ToolTip": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\Data\\JsonDataStore.cs",
+              "RelativeToolTip": "Data\\JsonDataStore.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T07:57:39.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ArchivioPrenotazioni.cs",
+              "DocumentMoniker": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\models\\ArchivioPrenotazioni.cs",
+              "RelativeDocumentMoniker": "models\\ArchivioPrenotazioni.cs",
+              "ToolTip": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\models\\ArchivioPrenotazioni.cs",
+              "RelativeToolTip": "models\\ArchivioPrenotazioni.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T07:56:53.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Prenotazione.cs",
+              "DocumentMoniker": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\models\\Prenotazione.cs",
+              "RelativeDocumentMoniker": "models\\Prenotazione.cs",
+              "ToolTip": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\models\\Prenotazione.cs",
+              "RelativeToolTip": "models\\Prenotazione.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T07:56:37.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Esame-Finale-C#-gestione-prenotazione-aule",
+              "DocumentMoniker": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\Esame-Finale-C#-gestione-prenotazione-aule.csproj",
+              "RelativeDocumentMoniker": "Esame-Finale-C#-gestione-prenotazione-aule.csproj",
+              "ToolTip": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\Esame-Finale-C#-gestione-prenotazione-aule.csproj",
+              "RelativeToolTip": "Esame-Finale-C#-gestione-prenotazione-aule.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-14T07:54:38.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AulaStudio..cs",
+              "DocumentMoniker": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\models\\AulaStudio..cs",
+              "RelativeDocumentMoniker": "models\\AulaStudio..cs",
+              "ToolTip": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\models\\AulaStudio..cs",
+              "RelativeToolTip": "models\\AulaStudio..cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T07:56:19.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Studente..cs",
+              "DocumentMoniker": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\models\\Studente..cs",
+              "RelativeDocumentMoniker": "models\\Studente..cs",
+              "ToolTip": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\models\\Studente..cs",
+              "RelativeToolTip": "models\\Studente..cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T07:55:58.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Ruolo..cs",
+              "DocumentMoniker": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\models\\Ruolo..cs",
+              "RelativeDocumentMoniker": "models\\Ruolo..cs",
+              "ToolTip": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\models\\Ruolo..cs",
+              "RelativeToolTip": "models\\Ruolo..cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T07:55:39.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\GianniPC\\OneDrive\\Desktop\\Esame-Finale-C#\\Esame-Finale-C#-gestione-prenotazione-aule\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T07:39:06.414Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

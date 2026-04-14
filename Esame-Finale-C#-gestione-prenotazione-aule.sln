@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36623.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esame-Finale-C#-gestione-prenotazione-aule", "Esame-Finale-C#-gestione-prenotazione-aule.csproj", "{F6879A3B-D764-4810-99AE-D670867AB361}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6879A3B-D764-4810-99AE-D670867AB361}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6879A3B-D764-4810-99AE-D670867AB361}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6879A3B-D764-4810-99AE-D670867AB361}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6879A3B-D764-4810-99AE-D670867AB361}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86C65249-5F3C-4DF9-8020-54525607F51C}
+	EndGlobalSection
+EndGlobal
