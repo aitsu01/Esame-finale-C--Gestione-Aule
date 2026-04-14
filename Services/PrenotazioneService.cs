@@ -176,5 +176,54 @@ namespace PrenotazioneAuleStudio.Services
             AulaStudio? aula = _aule.FirstOrDefault(a => a.Id == aulaId);
             return aula?.Capienza ?? 0;
         }
+
+        public List<Prenotazione> OttieniTutteLePrenotazioni()
+        {
+            return _archivio.Prenotazioni
+                .OrderBy(p => p.Giorno)
+                .ThenBy(p => p.FasciaOraria)
+                .ThenBy(p => p.NomeAula)
+                .ToList();
+        }
+
+        public bool CancellaPrenotazioneAdmin(int prenotazioneId, out string messaggio)
+        {
+            Prenotazione? prenotazione = _archivio.Prenotazioni
+                .FirstOrDefault(p => p.Id == prenotazioneId);
+
+            if (prenotazione == null)
+            {
+                messaggio = "Prenotazione non trovata.";
+                return false;
+            }
+
+            _archivio.Prenotazioni.Remove(prenotazione);
+            _dataStore.Salva(_archivio);
+
+            messaggio = "Prenotazione eliminata con successo.";
+            return true;
+        }
+
+        public void CancellaPrenotazioniPerAula(int aulaId)
+        {
+            _archivio.Prenotazioni.RemoveAll(p => p.AulaId == aulaId);
+            _dataStore.Salva(_archivio);
+        }
+
+        public int CalcolaPostiDisponibili(int aulaId, DateTime giorno, string fasciaOraria)
+        {
+            int capienzaAula = OttieniCapienzaAula(aulaId);
+
+            int postiPrenotati = _archivio.Prenotazioni
+                .Where(p => p.AulaId == aulaId &&
+                            p.Giorno.Date == giorno.Date &&
+                            p.FasciaOraria == fasciaOraria)
+                .Sum(p => p.PostiRichiesti);
+
+            return capienzaAula - postiPrenotati;
+        }
+
+
+
     }
 }

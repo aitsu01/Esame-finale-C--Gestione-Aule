@@ -9,17 +9,12 @@ namespace PrenotazioneAuleStudio
     {
         static void Main()
         {
-            List<AulaStudio> aule = new()
-            {
-                new AulaStudio { Id = 1, Nome = "Aula di Informatica", Capienza = 30 },
-                new AulaStudio { Id = 2, Nome = "Aula di Chimica", Capienza = 25 },
-                new AulaStudio { Id = 3, Nome = "Aula di Statistica", Capienza = 20 },
-                new AulaStudio { Id = 4, Nome = "Aula di Fisica", Capienza = 35 },
-                new AulaStudio { Id = 5, Nome = "Aula di Matematica", Capienza = 40 }
-            };
-
             JsonDataStore dataStore = new JsonDataStore();
             JsonStudentiStore studentiStore = new JsonStudentiStore();
+            JsonAuleStore auleStore = new JsonAuleStore();
+
+            AulaService aulaService = new AulaService(auleStore);
+            List<AulaStudio> aule = aulaService.OttieniTutte();
 
             PrenotazioneService prenotazioneService = new PrenotazioneService(dataStore, aule);
             StudenteService studenteService = new StudenteService(studentiStore);
@@ -37,7 +32,7 @@ namespace PrenotazioneAuleStudio
                     break;
 
                 case (int)Ruolo.Amministratore:
-                    Console.WriteLine("Area amministratore non ancora implementata.");
+                    AvviaAreaAmministratore(aulaService, prenotazioneService);
                     break;
 
                 default:
@@ -59,6 +54,14 @@ namespace PrenotazioneAuleStudio
 
             MenuStudente menuStudente = new MenuStudente(studente, aule, prenotazioneService);
             menuStudente.Avvia();
+        }
+
+        private static void AvviaAreaAmministratore(
+            AulaService aulaService,
+            PrenotazioneService prenotazioneService)
+        {
+            MenuAmministratore menuAmministratore = new MenuAmministratore(aulaService, prenotazioneService);
+            menuAmministratore.Avvia();
         }
     }
 }

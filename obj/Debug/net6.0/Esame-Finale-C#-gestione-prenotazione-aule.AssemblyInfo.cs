@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Esame-Finale-C#-gestione-prenotazione-aule")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5f62cbce3c2a4c02f5fb1f159228f6c91223cfc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb426293fc9138168ec542970801c48772010f84")]
 [assembly: System.Reflection.AssemblyProductAttribute("Esame-Finale-C#-gestione-prenotazione-aule")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Esame-Finale-C#-gestione-prenotazione-aule")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
