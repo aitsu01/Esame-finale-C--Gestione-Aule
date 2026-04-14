@@ -1,88 +1,107 @@
-﻿# Sistema di Gestione Prenotazione Aule Studio
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema di Gestione Prenotazione Aule Studio</title>
+</head>
+<body>
 
-Progetto sviluppato in **C# Console App** per la gestione della prenotazione di aule studio da parte di **studenti** e **amministratore**.
+  <h1>Sistema di Gestione Prenotazione Aule Studio</h1>
 
-## Obiettivo del progetto
+  <p>
+    Progetto sviluppato come <strong>applicazione console in C#</strong> per la gestione
+    della prenotazione di aule studio da parte di <strong>studenti</strong> e
+    <strong>amministratore</strong>.
+  </p>
 
-L'applicazione consente di gestire in modo semplice ed efficace la prenotazione delle aule studio, con persistenza dei dati tramite file **JSON**.
+  <h2>Obiettivo del progetto</h2>
+  <p>
+    L'applicazione consente di gestire in modo semplice ed efficace la prenotazione
+    delle aule studio, con <strong>persistenza dei dati tramite file JSON</strong>.
+  </p>
 
-Il sistema permette:
+  <p>Il sistema permette:</p>
+  <ul>
+    <li>agli <strong>studenti</strong> di prenotare un’aula, visualizzare, modificare e cancellare le proprie prenotazioni;</li>
+    <li>all’<strong>amministratore</strong> di gestire prenotazioni e aule studio.</li>
+  </ul>
 
-- agli **studenti** di prenotare un’aula, visualizzare, modificare e cancellare le proprie prenotazioni
-- all’**amministratore** di gestire le prenotazioni e le aule studio
+  <hr />
 
----
+  <h2>Funzionalità implementate</h2>
 
-## Funzionalità implementate
+  <h3>Ruoli disponibili</h3>
+  <p>All’avvio del programma è possibile scegliere tra due ruoli:</p>
+  <ul>
+    <li><strong>Studente</strong></li>
+    <li><strong>Amministratore</strong></li>
+  </ul>
 
-### Ruoli disponibili
+  <h3>Area Studente</h3>
+  <p>Lo studente può:</p>
+  <ul>
+    <li>inserire il proprio nome;</li>
+    <li>essere riconosciuto dal sistema tramite un <strong>ID univoco</strong>;</li>
+    <li>prenotare un’aula scegliendo:
+      <ul>
+        <li>aula;</li>
+        <li>giorno;</li>
+        <li>fascia oraria;</li>
+        <li>numero di posti richiesti.</li>
+      </ul>
+    </li>
+    <li>visualizzare solo le proprie prenotazioni;</li>
+    <li>modificare le proprie prenotazioni;</li>
+    <li>cancellare le proprie prenotazioni.</li>
+  </ul>
 
-All’avvio del programma è possibile scegliere tra due ruoli:
+  <h3>Area Amministratore</h3>
+  <p>L’amministratore può:</p>
+  <ul>
+    <li>visualizzare tutte le prenotazioni;</li>
+    <li>visualizzare tutte le aule studio;</li>
+    <li>eliminare una prenotazione;</li>
+    <li>aggiungere una nuova aula studio;</li>
+    <li>eliminare un’aula studio;</li>
+    <li>aumentare la capienza massima di un’aula.</li>
+  </ul>
 
-- **Studente**
-- **Amministratore**
+  <p>
+    Quando un’aula viene eliminata, il sistema rimuove automaticamente
+    anche tutte le prenotazioni associate.
+  </p>
 
----
+  <hr />
 
-## Area Studente
+  <h2>Gestione dei posti disponibili</h2>
+  <p>Ogni aula dispone di una <strong>capienza massima</strong>.</p>
 
-Lo studente può:
+  <p>Il sistema:</p>
+  <ul>
+    <li>accetta una prenotazione se i posti richiesti sono <strong>minori o uguali</strong> ai posti disponibili;</li>
+    <li>rifiuta una prenotazione se i posti richiesti <strong>superano</strong> quelli disponibili per una determinata aula, in uno specifico giorno e in una specifica fascia oraria.</li>
+  </ul>
 
-- inserire il proprio nome
-- essere riconosciuto dal sistema tramite un **ID univoco**
-- prenotare un’aula scegliendo:
-  - aula
-  - giorno
-  - fascia oraria
-  - numero di posti richiesti
-- visualizzare solo le proprie prenotazioni
-- modificare le proprie prenotazioni
-- cancellare le proprie prenotazioni
+  <hr />
 
----
+  <h2>Persistenza dei dati</h2>
+  <p>
+    I dati vengono salvati in file <strong>JSON</strong> per essere mantenuti
+    anche dopo la chiusura del programma.
+  </p>
 
-## Area Amministratore
+  <p>File utilizzati:</p>
+  <ul>
+    <li><code>prenotazioni.json</code></li>
+    <li><code>studenti.json</code></li>
+    <li><code>aule.json</code></li>
+  </ul>
 
-L’amministratore può:
+  <hr />
 
-- visualizzare tutte le prenotazioni
-- visualizzare tutte le aule studio
-- eliminare una prenotazione
-- aggiungere una nuova aula studio
-- eliminare un’aula studio
-- aumentare la capienza massima di un’aula
-
-Quando un’aula viene eliminata, il sistema elimina automaticamente anche tutte le prenotazioni associate a quell’aula.
-
----
-
-## Gestione posti disponibili
-
-Ogni aula ha una **capienza massima**.
-
-Il sistema:
-
-- accetta una prenotazione se i posti richiesti sono **minori o uguali** ai posti disponibili
-- rifiuta una prenotazione se i posti richiesti **superano** i posti disponibili per quella determinata aula, in quello specifico giorno e in quella specifica fascia oraria
-
----
-
-## Persistenza dei dati
-
-I dati vengono salvati in file **JSON** per essere mantenuti anche dopo la chiusura del programma.
-
-File utilizzati:
-
-- `prenotazioni.json`
-- `studenti.json`
-- `aule.json`
-
----
-
-## Struttura del progetto
-
-```text
-PrenotazioneAuleStudio/
+  <h2>Struttura del progetto</h2>
+  <pre><code>PrenotazioneAuleStudio/
 │
 ├── Models/
 │   ├── Ruolo.cs
@@ -109,74 +128,108 @@ PrenotazioneAuleStudio/
 │   └── MenuAmministratore.cs
 │
 ├── Program.cs
-└── README.md
+└── README.md</code></pre>
 
+  <hr />
 
-User Story implementate
-User Story 1
+  <h2>User Story implementate</h2>
 
-Come studente, voglio:
+  <h3>User Story 1</h3>
+  <p><strong>Come studente, voglio:</strong></p>
+  <ul>
+    <li>prenotare un’aula studio per un determinato giorno e per una determinata fascia oraria;</li>
+    <li>visualizzare le mie prenotazioni;</li>
+    <li>modificare le mie prenotazioni;</li>
+    <li>cancellare le mie prenotazioni.</li>
+  </ul>
 
-prenotare un’aula studio per un determinato giorno e per una determinata fascia oraria
-visualizzare le mie prenotazioni
-modificare le mie prenotazioni
-cancellare le mie prenotazioni
-User Story 2
+  <h3>User Story 2</h3>
+  <p><strong>Come sistema, devo:</strong></p>
+  <ul>
+    <li>rifiutare una prenotazione se supera i posti disponibili per quella determinata fascia oraria e per quel determinato giorno;</li>
+    <li>accettare una prenotazione se i posti richiesti sono minori o uguali ai posti disponibili per quella determinata fascia oraria e per quel determinato giorno.</li>
+  </ul>
 
-Come sistema, devo:
+  <h3>User Story 3</h3>
+  <p><strong>Come amministratore, voglio:</strong></p>
+  <ul>
+    <li>visualizzare tutte le prenotazioni con le relative informazioni sugli utenti che hanno prenotato;</li>
+    <li>eliminare prenotazioni;</li>
+    <li>visualizzare tutte le aule studio;</li>
+    <li>aggiungere nuove aule studio;</li>
+    <li>eliminare aule studio e tutte le prenotazioni associate;</li>
+    <li>modificare la capienza massima delle aule, solo aumentandola.</li>
+  </ul>
 
-rifiutare una prenotazione se supera i posti disponibili per quella determinata fascia oraria e per quel determinato giorno
-accettare una prenotazione se i posti richiesti sono minori o uguali ai posti disponibili per quella determinata fascia oraria e per quel determinato giorno
-User Story 3
+  <hr />
 
-Come amministratore, voglio:
+  <h2>Informazioni mostrate nelle prenotazioni</h2>
 
-visualizzare tutte le prenotazioni con le relative informazioni sugli utenti che hanno prenotato
-eliminare prenotazioni
-visualizzare tutte le aule studio
-aggiungere nuove aule studio
-eliminare aule studio e tutte le prenotazioni associate
-modificare la capienza massima delle aule, solo aumentandola
-Informazioni mostrate nelle prenotazioni
-Studente
+  <h3>Studente</h3>
+  <p>Lo studente visualizza le proprie prenotazioni con:</p>
+  <ul>
+    <li>ID prenotazione;</li>
+    <li>nome aula;</li>
+    <li>giorno;</li>
+    <li>fascia oraria;</li>
+    <li>posti richiesti.</li>
+  </ul>
 
-Lo studente visualizza le proprie prenotazioni con:
+  <h3>Amministratore</h3>
+  <p>L’amministratore visualizza tutte le prenotazioni con:</p>
+  <ul>
+    <li>ID prenotazione;</li>
+    <li>nome studente;</li>
+    <li>nome aula;</li>
+    <li>giorno;</li>
+    <li>fascia oraria;</li>
+    <li>posti prenotati;</li>
+    <li>posti ancora disponibili.</li>
+  </ul>
 
-ID prenotazione
-nome aula
-giorno
-fascia oraria
-posti richiesti
-Amministratore
+  <hr />
 
-L’amministratore visualizza tutte le prenotazioni con:
+  <h2>Tecnologie utilizzate</h2>
+  <ul>
+    <li><strong>C#</strong></li>
+    <li><strong>.NET Console Application</strong></li>
+    <li><strong>System.Text.Json</strong></li>
+    <li><strong>JSON</strong> per la persistenza dei dati</li>
+  </ul>
 
-ID prenotazione
-nome studente
-nome aula
-giorno
-fascia oraria
-posti prenotati
-posti ancora disponibili
-Tecnologie utilizzate
-C#
-.NET Console Application
-System.Text.Json
-JSON per la persistenza dei dati
-Avvio del progetto
-Da Visual Studio
-Aprire la solution o il progetto
-Compilare
-Avviare l’applicazione
-Da terminale
-dotnet build
-dotnet run
-Note progettuali
-i dati vengono salvati localmente in formato JSON
-gli studenti vengono identificati tramite nome e associati a un ID univoco persistente
-la capienza delle aule può essere solo aumentata dall’amministratore
-l’eliminazione di un’aula provoca anche l’eliminazione delle relative prenotazioni
+  <hr />
 
+  <h2>Avvio del progetto</h2>
 
-Progetto realizzato come esercitazione / esame finale in C# per la gestione delle prenotazioni delle aule studio.
+  <h3>Da Visual Studio</h3>
+  <ol>
+    <li>Aprire la solution o il progetto;</li>
+    <li>compilare il progetto;</li>
+    <li>avviare l’applicazione.</li>
+  </ol>
+
+  <h3>Da terminale</h3>
+  <pre><code>dotnet build
+dotnet run</code></pre>
+
+  <hr />
+
+  <h2>Note progettuali</h2>
+  <ul>
+    <li>i dati vengono salvati localmente in formato JSON;</li>
+    <li>gli studenti vengono identificati tramite nome e associati a un ID univoco persistente;</li>
+    <li>la capienza delle aule può essere modificata dall’amministratore solo in aumento;</li>
+    <li>l’eliminazione di un’aula comporta anche l’eliminazione automatica delle relative prenotazioni.</li>
+  </ul>
+
+  <hr />
+
+  <h2>Conclusione</h2>
+  <p>
+    Progetto realizzato come esercitazione / esame finale in C# per la gestione
+    delle prenotazioni delle aule studio.
+  </p>
+
+</body>
+</html>
 
