@@ -7,6 +7,7 @@ namespace PrenotazioneAuleStudio.Services
     {
         private readonly JsonDataStore _dataStore;
         private readonly ArchivioPrenotazioni _archivio;
+        private readonly List<AulaStudio> _aule;
 
         public List<string> FasceOrarieDisponibili { get; } = new()
         {
@@ -16,9 +17,10 @@ namespace PrenotazioneAuleStudio.Services
             "16:00-18:00"
         };
 
-        public PrenotazioneService(JsonDataStore dataStore)
+        public PrenotazioneService(JsonDataStore dataStore, List<AulaStudio> aule)
         {
             _dataStore = dataStore;
+            _aule = aule;
             _archivio = _dataStore.Carica();
         }
 
@@ -31,7 +33,13 @@ namespace PrenotazioneAuleStudio.Services
                 .ToList();
         }
 
-        public bool Prenota(Studente studente, AulaStudio aula, DateTime giorno, string fasciaOraria, out string messaggio)
+        public bool Prenota(
+            Studente studente,
+            AulaStudio aula,
+            DateTime giorno,
+            string fasciaOraria,
+            int postiRichiesti,
+            out string messaggio)
         {
             if (giorno.Date < DateTime.Today)
             {
@@ -45,14 +53,23 @@ namespace PrenotazioneAuleStudio.Services
                 return false;
             }
 
-            bool aulaOccupata = _archivio.Prenotazioni.Any(p =>
-                p.AulaId == aula.Id &&
-                p.Giorno.Date == giorno.Date &&
-                p.FasciaOraria == fasciaOraria);
-
-            if (aulaOccupata)
+            if (postiRichiesti <= 0)
             {
-                messaggio = "L'aula è già prenotata per quel giorno e quella fascia oraria.";
+                messaggio = "Il numero di posti richiesti deve essere maggiore di zero.";
+                return false;
+            }
+
+            int postiGiaPrenotati = _archivio.Prenotazioni
+                .Where(p => p.AulaId == aula.Id &&
+                            p.Giorno.Date == giorno.Date &&
+                            p.FasciaOraria == fasciaOraria)
+                .Sum(p => p.PostiRichiesti);
+
+            int postiDisponibili = aula.Capienza - postiGiaPrenotati;
+
+            if (postiRichiesti > postiDisponibili)
+            {
+                messaggio = $"Prenotazione rifiutata. Posti disponibili: {postiDisponibili}, posti richiesti: {postiRichiesti}.";
                 return false;
             }
 
@@ -64,17 +81,24 @@ namespace PrenotazioneAuleStudio.Services
                 AulaId = aula.Id,
                 NomeAula = aula.Nome,
                 Giorno = giorno.Date,
-                FasciaOraria = fasciaOraria
+                FasciaOraria = fasciaOraria,
+                PostiRichiesti = postiRichiesti
             };
 
             _archivio.Prenotazioni.Add(nuovaPrenotazione);
             _dataStore.Salva(_archivio);
 
-            messaggio = "Prenotazione effettuata con successo.";
+            messaggio = $"Prenotazione effettuata con successo. Posti residui: {postiDisponibili - postiRichiesti}.";
             return true;
         }
 
-        public bool ModificaPrenotazione(int prenotazioneId, int studenteId, DateTime nuovoGiorno, string nuovaFascia, out string messaggio)
+        public bool ModificaPrenotazione(
+            int prenotazioneId,
+            int studenteId,
+            DateTime nuovoGiorno,
+            string nuovaFascia,
+            int nuoviPostiRichiesti,
+            out string messaggio)
         {
             Prenotazione? prenotazione = _archivio.Prenotazioni
                 .FirstOrDefault(p => p.Id == prenotazioneId && p.StudenteId == studenteId);
@@ -97,24 +121,35 @@ namespace PrenotazioneAuleStudio.Services
                 return false;
             }
 
-            bool conflitto = _archivio.Prenotazioni.Any(p =>
-                p.Id != prenotazioneId &&
-                p.AulaId == prenotazione.AulaId &&
-                p.Giorno.Date == nuovoGiorno.Date &&
-                p.FasciaOraria == nuovaFascia);
-
-            if (conflitto)
+            if (nuoviPostiRichiesti <= 0)
             {
-                messaggio = "L'aula è già occupata nel nuovo giorno e nella nuova fascia oraria.";
+                messaggio = "Il numero di posti richiesti deve essere maggiore di zero.";
+                return false;
+            }
+
+            int postiGiaPrenotati = _archivio.Prenotazioni
+                .Where(p => p.Id != prenotazioneId &&
+                            p.AulaId == prenotazione.AulaId &&
+                            p.Giorno.Date == nuovoGiorno.Date &&
+                            p.FasciaOraria == nuovaFascia)
+                .Sum(p => p.PostiRichiesti);
+
+            int capienzaAula = OttieniCapienzaAula(prenotazione.AulaId);
+            int postiDisponibili = capienzaAula - postiGiaPrenotati;
+
+            if (nuoviPostiRichiesti > postiDisponibili)
+            {
+                messaggio = $"Modifica rifiutata. Posti disponibili: {postiDisponibili}, posti richiesti: {nuoviPostiRichiesti}.";
                 return false;
             }
 
             prenotazione.Giorno = nuovoGiorno.Date;
             prenotazione.FasciaOraria = nuovaFascia;
+            prenotazione.PostiRichiesti = nuoviPostiRichiesti;
 
             _dataStore.Salva(_archivio);
 
-            messaggio = "Prenotazione modificata con successo.";
+            messaggio = $"Prenotazione modificata con successo. Posti residui: {postiDisponibili - nuoviPostiRichiesti}.";
             return true;
         }
 
@@ -134,6 +169,12 @@ namespace PrenotazioneAuleStudio.Services
 
             messaggio = "Prenotazione cancellata con successo.";
             return true;
+        }
+
+        private int OttieniCapienzaAula(int aulaId)
+        {
+            AulaStudio? aula = _aule.FirstOrDefault(a => a.Id == aulaId);
+            return aula?.Capienza ?? 0;
         }
     }
 }

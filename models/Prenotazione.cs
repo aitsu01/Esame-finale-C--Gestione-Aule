@@ -9,10 +9,11 @@
         public string NomeAula { get; set; } = string.Empty;
         public DateTime Giorno { get; set; }
         public string FasciaOraria { get; set; } = string.Empty;
+        public int PostiRichiesti { get; set; }
 
         public override string ToString()
         {
-            return $"ID: {Id} | Aula: {NomeAula} | Giorno: {Giorno:dd/MM/yyyy} | Fascia: {FasciaOraria}";
+            return $"ID: {Id} | Aula: {NomeAula} | Giorno: {Giorno:dd/MM/yyyy} | Fascia: {FasciaOraria} | Posti richiesti: {PostiRichiesti}";
         }
     }
 }

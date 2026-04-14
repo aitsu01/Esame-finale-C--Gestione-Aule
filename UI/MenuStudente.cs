@@ -7,6 +7,7 @@ namespace PrenotazioneAuleStudio.UI
     {
         private readonly Studente _studente;
         private readonly List<AulaStudio> _aule;
+        
         private readonly PrenotazioneService _prenotazioneService;
 
         public MenuStudente(Studente studente, List<AulaStudio> aule, PrenotazioneService prenotazioneService)
@@ -74,11 +75,17 @@ namespace PrenotazioneAuleStudio.UI
             }
 
             DateTime giorno = InputHelper.LeggiData("Inserisci il giorno (gg/mm/aaaa): ");
+            string fascia = SelezionaFasciaOraria();
+            int postiRichiesti = InputHelper.LeggiInteroPositivo("Inserisci il numero di posti richiesti: ");
 
-            MostraFasceOrarie();
-            string fascia = InputHelper.LeggiStringa("Inserisci fascia oraria esatta: ");
+            bool esito = _prenotazioneService.Prenota(
+                _studente,
+                aulaSelezionata,
+                giorno,
+                fascia,
+                postiRichiesti,
+                out string messaggio);
 
-            bool esito = _prenotazioneService.Prenota(_studente, aulaSelezionata, giorno, fascia, out string messaggio);
             Console.WriteLine(messaggio);
         }
 
@@ -121,15 +128,15 @@ namespace PrenotazioneAuleStudio.UI
 
             int idPrenotazione = InputHelper.LeggiIntero("Inserisci ID prenotazione da modificare: ");
             DateTime nuovoGiorno = InputHelper.LeggiData("Inserisci il nuovo giorno (gg/mm/aaaa): ");
-
-            MostraFasceOrarie();
-            string nuovaFascia = InputHelper.LeggiStringa("Inserisci la nuova fascia oraria esatta: ");
+            string nuovaFascia = SelezionaFasciaOraria();
+            int nuoviPosti = InputHelper.LeggiInteroPositivo("Inserisci il nuovo numero di posti richiesti: ");
 
             bool esito = _prenotazioneService.ModificaPrenotazione(
                 idPrenotazione,
                 _studente.Id,
                 nuovoGiorno,
                 nuovaFascia,
+                nuoviPosti,
                 out string messaggio);
 
             Console.WriteLine(messaggio);
@@ -164,17 +171,33 @@ namespace PrenotazioneAuleStudio.UI
             Console.WriteLine("Aule disponibili:");
             foreach (var aula in _aule)
             {
-                Console.WriteLine($"{aula.Id}. {aula.Nome}");
+                Console.WriteLine($"{aula.Id}. {aula.Nome} - Capienza: {aula.Capienza} posti");
             }
         }
 
         private void MostraFasceOrarie()
         {
             Console.WriteLine("Fasce orarie disponibili:");
-            foreach (var fascia in _prenotazioneService.FasceOrarieDisponibili)
+            for (int i = 0; i < _prenotazioneService.FasceOrarieDisponibili.Count; i++)
             {
-                Console.WriteLine($"- {fascia}");
+                Console.WriteLine($"{i + 1}) {_prenotazioneService.FasceOrarieDisponibili[i]}");
             }
         }
+
+        private string SelezionaFasciaOraria()
+        {
+            MostraFasceOrarie();
+
+            int scelta;
+            do
+            {
+                scelta = InputHelper.LeggiIntero("Seleziona una fascia oraria: ");
+            }
+            while (scelta < 1 || scelta > _prenotazioneService.FasceOrarieDisponibili.Count);
+
+            return _prenotazioneService.FasceOrarieDisponibili[scelta - 1];
+        }
+
+
     }
 }

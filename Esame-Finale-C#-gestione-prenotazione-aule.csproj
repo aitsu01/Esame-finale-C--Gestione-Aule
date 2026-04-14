@@ -8,8 +8,6 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include=".gitignore" />
-  </ItemGroup>
+
 
 </Project>

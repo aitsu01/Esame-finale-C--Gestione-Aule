@@ -45,5 +45,20 @@ namespace PrenotazioneAuleStudio.UI
 
             return data;
         }
+
+        public static int LeggiInteroPositivo(string messaggio)
+        {
+            int valore;
+            do
+            {
+                Console.Write(messaggio);
+            }
+            while (!int.TryParse(Console.ReadLine(), out valore) || valore <= 0);
+
+            return valore;
+        }
+
+
+
     }
 }
